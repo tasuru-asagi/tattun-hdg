@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tattun農業 | tattun Agriculture</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+--earth: #1E2B12;
+--moss: #3D5A34;
+--sage: #6B8F5E;
+--sage-light: #8FAF82;
+--cream: #F4EFE4;
+--wheat: #E6DAC0;
+--clay: #A87D52;
+--deep: #111A0A;
+--text: #22281A;
+--muted: #626B50;
+--gold: #C4A96A;
+}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tattun農業 | tattun Agriculture</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+--earth: #1E2B12;
+--moss: #3D5A34;
+--sage: #6B8F5E;
+--sage-light: #8FAF82;
+--cream: #F4EFE4;
+--wheat: #E6DAC0;
+--clay: #A87D52;
+--deep: #111A0A;
+--text: #22281A;
+--muted: #626B50;
+--gold: #C4A96A;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background: var(--cream);
+color: var(--text);
+overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.4rem 5rem;
+background: rgba(244,239,228,0.93);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid rgba(61,90,52,0.12);
+transition: box-shadow 0.3s;
+}
+
+.logo-wrap { display: flex; flex-direction: column; line-height: 1.2; }
+
+.logo-ja {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.05rem;
+font-weight: 400;
+color: var(--earth);
+letter-spacing: 3px;
+}
+
+.logo-en {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.72rem;
+font-weight: 300;
+color: var(--sage);
+letter-spacing: 4px;
+}
+
+.nav-links { display: flex; gap: 2.8rem; list-style: none; }
+
+.nav-links a {
+text-decoration: none;
+font-size: 0.72rem;
+letter-spacing: 2px;
+color: var(--muted);
+transition: color 0.3s;
+font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--earth); }
+
+/* HERO */
+.hero {
+height: 100vh;
+position: relative;
+display: flex;
+align-items: center;
+overflow: hidden;
+background: var(--deep);
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 65% 40%, rgba(61,90,52,0.4) 0%, transparent 55%),
+radial-gradient(ellipse at 15% 85%, rgba(30,43,18,0.7) 0%, transparent 45%),
+linear-gradient(150deg, #0D1508 0%, #1A2610 60%, #111A0A 100%);
+}
+
+.hero-orb {
+position: absolute;
+border-radius: 50%;
+animation: orbFloat 10s ease-in-out infinite;
+pointer-events: none;
+}
+
+.hero-orb:nth-child(2) {
+width: 700px; height: 700px;
+background: radial-gradient(circle, rgba(107,143,94,0.14) 0%, transparent 70%);
+top: -150px; right: -150px;
+animation-delay: 0s;
+}
+
+.hero-orb:nth-child(3) {
+width: 350px; height: 350px;
+background: radial-gradient(circle, rgba(196,169,106,0.07) 0%, transparent 70%);
+bottom: 5%; left: 5%;
+animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+0%, 100% { transform: translateY(0) scale(1); }
+50% { transform: translateY(-25px) scale(1.04); }
+}
+
+.hero-line {
+position: absolute;
+left: 50%;
+top: 8%;
+width: 1px;
+height: 84%;
+background: linear-gradient(to bottom, transparent, rgba(107,143,94,0.12), transparent);
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+padding: 0 5rem;
+max-width: 780px;
+}
+
+.hero-eyebrow {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.85rem;
+letter-spacing: 5px;
+color: var(--gold);
+margin-bottom: 2rem;
+font-weight: 300;
+animation: fadeUp 1.4s ease both;
+}
+
+.hero-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+font-weight: 200;
+line-height: 1.25;
+color: var(--cream);
+margin-bottom: 2rem;
+animation: fadeUp 1.4s ease 0.25s both;
+}
+
+.hero-title strong {
+font-weight: 600;
+color: var(--sage-light);
+display: block;
+}
+
+.hero-sub {
+font-size: 0.92rem;
+line-height: 2.1;
+color: rgba(244,239,228,0.55);
+margin-bottom: 3.5rem;
+max-width: 480px;
+font-weight: 300;
+animation: fadeUp 1.4s ease 0.5s both;
+}
+
+.hero-cta {
+display: inline-flex;
+gap: 1.2rem;
+animation: fadeUp 1.4s ease 0.75s both;
+}
+
+.btn-p {
+padding: 0.85rem 2.4rem;
+background: var(--sage);
+color: var(--cream);
+border: none;
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 0.72rem;
+letter-spacing: 2px;
+cursor: pointer;
+text-decoration: none;
+transition: background 0.3s, transform 0.2s;
+border-radius: 1px;
+}
+
+.btn-p:hover { background: var(--moss); transform: translateY(-2px); }
+
+.btn-o {
+padding: 0.85rem 2.4rem;
+background: transparent;
+color: rgba(244,239,228,0.7);
+border: 1px solid rgba(244,239,228,0.25);
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 0.72rem;
+letter-spacing: 2px;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.3s;
+border-radius: 1px;
+}
+
+.btn-o:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.scroll-hint {
+position: absolute;
+bottom: 2.5rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.6rem;
+animation: fadeUp 1.4s ease 1.2s both;
+}
+
+.scroll-hint span {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.68rem;
+letter-spacing: 4px;
+color: rgba(244,239,228,0.3);
+}
+
+.scroll-tick {
+width: 1px;
+height: 44px;
+background: linear-gradient(to bottom, var(--gold), transparent);
+animation: tickPulse 2.2s ease infinite;
+}
+
+@keyframes tickPulse {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 0.9; }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(32px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION COMMONS */
+section { padding: 9rem 5rem; }
+
+.s-label {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.78rem;
+letter-spacing: 5px;
+color: var(--sage);
+margin-bottom: 1rem;
+font-weight: 300;
+}
+
+.s-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.9rem, 3vw, 2.8rem);
+font-weight: 200;
+line-height: 1.35;
+color: var(--earth);
+margin-bottom: 1.5rem;
+}
+
+.s-body {
+font-size: 0.9rem;
+line-height: 2.1;
+color: var(--muted);
+max-width: 520px;
+font-weight: 300;
+}
+
+.accent-rule {
+width: 36px;
+height: 1px;
+background: var(--gold);
+margin-bottom: 1.8rem;
+}
+
+/* FOUNDER */
+.founder {
+background: var(--earth);
+position: relative;
+overflow: hidden;
+padding: 10rem 5rem;
+}
+
+.founder-watermark {
+position: absolute;
+font-family: 'Cormorant Garamond', serif;
+font-size: 26rem;
+font-weight: 300;
+color: rgba(255,255,255,0.025);
+bottom: -3rem;
+right: -1rem;
+line-height: 1;
+user-select: none;
+letter-spacing: -8px;
+font-style: italic;
+}
+
+.founder-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 7rem;
+align-items: center;
+position: relative;
+z-index: 1;
+}
+
+.founder-visual {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.founder-ring {
+width: 340px;
+height: 340px;
+border-radius: 50%;
+border: 1px solid rgba(196,169,106,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+animation: ringRotate 22s linear infinite;
+}
+
+@keyframes ringRotate {
+from { transform: rotate(0deg); }
+to   { transform: rotate(360deg); }
+}
+
+.founder-ring::before {
+content: '';
+position: absolute;
+width: 7px; height: 7px;
+background: var(--gold);
+border-radius: 50%;
+top: -3.5px; left: 50%;
+transform: translateX(-50%);
+}
+
+.founder-inner {
+width: 270px;
+height: 270px;
+border-radius: 50%;
+background: radial-gradient(circle at 40% 35%, rgba(107,143,94,0.22), rgba(17,26,10,0.9));
+border: 1px solid rgba(107,143,94,0.14);
+display: flex;
+align-items: center;
+justify-content: center;
+animation: ringRotate 22s linear infinite reverse;
+}
+
+.founder-initial {
+font-family: 'Cormorant Garamond', serif;
+font-size: 5.5rem;
+font-weight: 300;
+font-style: italic;
+color: var(--gold);
+opacity: 0.65;
+}
+
+.founder-text .s-label { color: var(--gold); }
+
+.founder-text .s-title {
+color: var(--cream);
+font-weight: 200;
+}
+
+.founder-text .s-title em {
+font-style: italic;
+color: var(--sage-light);
+}
+
+.founder-text .s-body {
+color: rgba(244,239,228,0.58);
+max-width: 460px;
+}
+
+.founder-name {
+margin-top: 3rem;
+padding-top: 2rem;
+border-top: 1px solid rgba(196,169,106,0.18);
+display: flex;
+align-items: baseline;
+gap: 1.2rem;
+}
+
+.founder-name-text {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.4rem;
+font-weight: 300;
+font-style: italic;
+color: var(--gold);
+letter-spacing: 2px;
+}
+
+.founder-name-role {
+font-size: 0.68rem;
+letter-spacing: 3px;
+color: rgba(244,239,228,0.32);
+text-transform: uppercase;
+}
+
+/* PHILOSOPHY */
+.philosophy {
+background: var(--wheat);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 7rem;
+align-items: center;
+}
+
+.phil-circles {
+position: relative;
+height: 450px;
+}
+
+.pc {
+position: absolute;
+border-radius: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: transform 0.6s ease;
+cursor: default;
+}
+
+.pc:hover { transform: scale(1.04); }
+.pc-1 { width: 310px; height: 310px; background: var(--moss); top: 0; left: 0; }
+.pc-2 { width: 190px; height: 190px; background: var(--clay); bottom: 0; right: 0; }
+.pc-3 { width: 125px; height: 125px; background: var(--sage); bottom: 45px; left: 8px; }
+
+.pc-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2rem;
+color: rgba(244,239,228,0.22);
+font-weight: 300;
+}
+
+.pc-label {
+font-size: 0.62rem;
+letter-spacing: 2px;
+color: rgba(244,239,228,0.82);
+text-align: center;
+padding: 0 1rem;
+font-weight: 500;
+}
+
+/* MANIFESTO */
+.manifesto {
+background: var(--moss);
+text-align: center;
+padding: 9rem 10rem;
+position: relative;
+overflow: hidden;
+}
+
+.manifesto-deco {
+position: absolute;
+font-family: 'Cormorant Garamond', serif;
+font-size: 28rem;
+color: rgba(255,255,255,0.03);
+top: -4rem;
+left: -1rem;
+line-height: 1;
+font-style: italic;
+user-select: none;
+}
+
+.manifesto-quote {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+font-weight: 200;
+line-height: 1.85;
+color: var(--cream);
+max-width: 800px;
+margin: 0 auto 3rem;
+position: relative;
+z-index: 1;
+}
+
+.manifesto-quote em {
+font-style: italic;
+color: var(--gold);
+font-weight: 300;
+}
+
+.manifesto-sig {
+display: inline-flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+position: relative;
+z-index: 1;
+}
+
+.manifesto-sig-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.5rem;
+font-style: italic;
+color: var(--gold);
+letter-spacing: 2px;
+}
+
+.manifesto-sig-role {
+font-size: 0.62rem;
+letter-spacing: 3px;
+color: rgba(244,239,228,0.38);
+text-transform: uppercase;
+}
+
+/* VALUES */
+.values { background: var(--cream); }
+
+.values-header {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+margin-bottom: 5rem;
+align-items: end;
+}
+
+.values-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 2px;
+}
+
+.v-card {
+background: var(--wheat);
+padding: 2.8rem 2.2rem;
+position: relative;
+overflow: hidden;
+transition: background 0.4s;
+cursor: default;
+}
+
+.v-card::after {
+content: '';
+position: absolute;
+bottom: 0; left: 0;
+width: 100%; height: 2px;
+background: var(--gold);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.4s;
+}
+
+.v-card:hover::after { transform: scaleX(1); }
+.v-card:hover { background: #ddd8c2; }
+
+.v-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 3rem;
+color: rgba(61,90,52,0.09);
+position: absolute;
+top: 0.8rem; right: 1.2rem;
+line-height: 1;
+font-weight: 300;
+}
+
+.v-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
+
+.v-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1rem;
+font-weight: 400;
+color: var(--earth);
+}
+
+/* INITIATIVES */
+.initiatives { background: var(--cream); padding-top: 2rem; }
+
+.init-list { margin-top: 4rem; }
+
+.init-row {
+display: grid;
+grid-template-columns: 100px 1fr;
+align-items: center;
+gap: 3rem;
+padding: 2.2rem 0;
+border-bottom: 1px solid rgba(61,90,52,0.11);
+}
+
+.init-row:first-child { border-top: 1px solid rgba(61,90,52,0.11); }
+
+.init-tag {
+font-size: 0.62rem;
+letter-spacing: 2px;
+color: var(--sage);
+font-weight: 500;
+}
+
+.init-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 300;
+color: var(--earth);
+margin-bottom: 0.3rem;
+}
+
+.init-sub {
+font-size: 0.78rem;
+color: var(--muted);
+font-weight: 300;
+font-style: italic;
+}
+
+.init-arrow { display: none; }
+
+/* FOOTER */
+footer {
+background: var(--deep);
+padding: 5rem 5rem 3rem;
+}
+
+.footer-top {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 4rem;
+padding-bottom: 3rem;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+margin-bottom: 2.5rem;
+}
+
+.footer-brand-ja {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 400;
+color: var(--cream);
+letter-spacing: 3px;
+margin-bottom: 0.3rem;
+}
+
+.footer-brand-en {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.75rem;
+letter-spacing: 4px;
+color: var(--sage-light);
+margin-bottom: 1.2rem;
+font-weight: 300;
+}
+
+.footer-tagline {
+font-size: 0.8rem;
+line-height: 1.9;
+color: rgba(244,239,228,0.32);
+font-weight: 300;
+max-width: 260px;
+}
+
+.footer-col-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.7rem;
+letter-spacing: 3px;
+color: var(--gold);
+margin-bottom: 1.4rem;
+font-weight: 300;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+
+.footer-links a {
+text-decoration: none;
+font-size: 0.78rem;
+color: rgba(244,239,228,0.35);
+transition: color 0.3s;
+font-weight: 300;
+}
+
+.footer-links a:hover { color: var(--cream); }
+
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.footer-copy {
+font-size: 0.68rem;
+color: rgba(244,239,228,0.18);
+letter-spacing: 1px;
+}
+
+.footer-founder-credit {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.8rem;
+font-style: italic;
+color: rgba(196,169,106,0.38);
+letter-spacing: 1px;
+}
+
+/* REVEAL */
+.reveal {
+opacity: 0;
+transform: translateY(26px);
+transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1 { transition-delay: 0.12s; }
+.rd2 { transition-delay: 0.24s; }
+.rd3 { transition-delay: 0.36s; }
+.rd4 { transition-delay: 0.48s; }
+.rd5 { transition-delay: 0.60s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="top-nav">
+<div class="logo-wrap">
+<div class="logo-ja">tattun農業</div>
+<div class="logo-en">tattun agriculture</div>
+</div>
+<ul class="nav-links">
+<li><a href="#founder">創業者</a></li>
+<li><a href="#philosophy">理念</a></li>
+<li><a href="#initiatives">取り組み</a></li>
+<li><a href="recruit/">採用情報</a></li>
+<li><a href="contact/">お問い合わせ</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-orb"></div>
+<div class="hero-orb"></div>
+<div class="hero-line"></div>
+
+<div class="hero-content">
+<p class="hero-eyebrow">tattun agriculture — founded by tattun</p>
+<h1 class="hero-title">
+ひとりの問いが、<br>
+<strong>農業の未来を</strong><br>
+変えはじめた
+</h1>
+<p class="hero-sub">
+環境と人間の尊厳を等しく重んじる——<br>
+tattunが抱いたその信念が、今日の私たちの礎となっています。
+</p>
+<div class="hero-cta">
+<a href="about/tattun.html" class="btn-p">tattunについて</a>
+<a href="#initiatives" class="btn-o">私たちの取り組み</a>
+</div>
+</div>
+
+<div class="scroll-hint">
+<div class="scroll-tick"></div>
+<span>scroll</span>
+</div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+<div class="founder-watermark">tattun</div>
+<div class="founder-grid">
+
+```
+<div class="founder-visual reveal">
+  <div class="founder-ring">
+    <div class="founder-inner">
+      <span class="founder-initial">t</span>
+    </div>
+  </div>
+</div>
+
+<div class="founder-text">
+  <p class="s-label reveal">founder &amp; visionary</p>
+  <div class="accent-rule reveal rd1"></div>
+  <h2 class="s-title reveal rd1">
+    土への敬意から、<br>
+    すべての思想が<br>
+    <em>生まれた</em>
+  </h2>
+  <p class="s-body reveal rd2">
+    tattunは、農業とは生産の技術ではなく、人間と自然の間に交わされる誠実な約束であると説いた。
+    その信念は、tattun農業の6つの価値観として、今も私たちの実践を導き続けている。
+  </p>
+  <div class="founder-name reveal rd3">
+    <span class="founder-name-text">tattun</span>
+    <span class="founder-name-role">Founder / CEO</span>
+  </div>
+</div>
+```
+
+</div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+<div class="phil-circles reveal">
+<div class="pc pc-1">
+<div class="pc-num">01</div>
+<div class="pc-label">環境との共生</div>
+</div>
+<div class="pc pc-2">
+<div class="pc-num">02</div>
+<div class="pc-label">人の尊厳</div>
+</div>
+<div class="pc pc-3">
+<div class="pc-num">03</div>
+<div class="pc-label">地域の未来</div>
+</div>
+</div>
+
+<div>
+<p class="s-label reveal">our philosophy</p>
+<div class="accent-rule reveal rd1"></div>
+<h2 class="s-title reveal rd1">
+農業は、生命と<br>生命を結ぶ<br>対話である
+</h2>
+<p class="s-body reveal rd2">
+私たちは完全無農薬栽培にコミットしています。
+化学物質に頼らない農業が環境と人体にもたらす恩恵を信じ、
+その実践を通じて大地との誠実な対話を続けています。
+</p>
+<p class="s-body reveal rd3" style="margin-top: 1.2rem;">
+一方で、無農薬栽培が抱える収量・病害リスクの課題には、
+最新の遺伝子技術で向き合うことにコミットしています。
+科学と自然の知恵を組み合わせることで、
+環境負荷をかけずに豊かな実りを届けられると考えています。
+</p>
+</div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+<div class="manifesto-deco">"</div>
+<p class="manifesto-quote reveal">
+「食べることは、<em>政治的な行為</em>であり、<br>
+生態学的な選択であり、<br>
+人への眼差しである。」
+</p>
+<div class="manifesto-sig reveal rd2">
+<span class="manifesto-sig-name">tattun</span>
+<span class="manifesto-sig-role">Founder, tattun Agriculture</span>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="values" id="values">
+<div class="values-header">
+<div>
+<p class="s-label reveal">core values</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">
+tattunが定めた、<br>5つの柱
+</h2>
+</div>
+<p class="s-body reveal rd2" style="align-self: end;">
+これは言葉ではなく、<br>毎日の農場運営に息づく行動指針です。
+</p>
+</div>
+
+<div class="values-grid">
+<div class="v-card reveal">
+<span class="v-icon">🌱</span>
+<span class="v-num">01</span>
+<h3 class="v-title">土壌の再生</h3>
+</div>
+<div class="v-card reveal rd1">
+<span class="v-icon">💧</span>
+<span class="v-num">02</span>
+<h3 class="v-title">水資源の保全</h3>
+</div>
+<div class="v-card reveal rd2">
+<span class="v-icon">👐</span>
+<span class="v-num">03</span>
+<h3 class="v-title">労働者の権利</h3>
+</div>
+<div class="v-card reveal rd1">
+<span class="v-icon">🤝</span>
+<span class="v-num">04</span>
+<h3 class="v-title">地域との共創</h3>
+</div>
+<div class="v-card reveal rd2">
+<span class="v-icon">📖</span>
+<span class="v-num">05</span>
+<h3 class="v-title">情報の透明性</h3>
+</div>
+</div>
+</section>
+
+<!-- INITIATIVES -->
+<section class="initiatives" id="initiatives">
+<p class="s-label reveal">our initiatives</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">私たちが向き合うこと</h2>
+
+<div class="init-list">
+<div class="init-row reveal">
+<span class="init-tag">栽培</span>
+<div>
+<h3 class="init-title">完全無農薬への揺るぎないコミットメント</h3>
+<p class="init-sub">化学農薬を一切使わないことが、私たちの出発点である。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd1">
+<span class="init-tag">技術</span>
+<div>
+<h3 class="init-title">遺伝子技術で、無農薬の限界に挑む</h3>
+<p class="init-sub">収量・病害への対応を、科学の力でカバーすることにコミットしている。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd2">
+<span class="init-tag">環境</span>
+<div>
+<h3 class="init-title">生物多様性の回復</h3>
+<p class="init-sub">農地が、生命の多様性を守る場所になれるか。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd1">
+<span class="init-tag">人権</span>
+<div>
+<h3 class="init-title">すべての人が尊重される労働</h3>
+<p class="init-sub">誰もが安心して働ける場所が、農業の土台である。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd2">
+<span class="init-tag">教育</span>
+<div>
+<h3 class="init-title">食と土への理解を次世代へ</h3>
+<p class="init-sub">知ることが、変えることの始まりだと信じている。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd4">
+<span class="init-tag">地域</span>
+<div>
+<h3 class="init-title">食のつながりを地域に取り戻す</h3>
+<p class="init-sub">生産者と消費者の距離が縮まるほど、食は豊かになる。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+</div>
+</section>
+
+<!-- RECRUIT -->
+<section style="background: var(--wheat); padding: 9rem 5rem;" id="recruit">
+<p class="s-label reveal">recruit</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">tattunとともに、<br>農業の未来を<br>つくる仲間へ</h2>
+<p class="s-body reveal rd2" style="margin-top: 0.5rem;">
+土と人を等しく大切にできる方を、私たちは求めています。<br>
+詳細はお問い合わせよりご連絡ください。
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+<div class="footer-top">
+<div>
+<div class="footer-brand-ja">tattun農業</div>
+<div class="footer-brand-en">tattun agriculture</div>
+<p class="footer-tagline">
+環境と人をともに大切にする農業の実践者として、持続可能な食のシステムをつくり続けます。
+</p>
+</div>
+<div>
+<ul class="footer-links">
+<li><a href="about/tattun.html">tattunについて</a></li>
+<li><a href="about/story.html">創業の想い</a></li>
+<li><a href="farm/">農場案内</a></li>
+<li><a href="recruit/">採用情報</a></li>
+<li><a href="contact/">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2024 tattun農業 / tattun Agriculture. All Rights Reserved.</p>
+<p class="footer-founder-credit">founded & envisioned by tattun</p>
+</div>
+</footer>
+
+<script src="js/site-common.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tattun農業 | tattun Agriculture</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+--earth: #1E2B12;
+--moss: #3D5A34;
+--sage: #6B8F5E;
+--sage-light: #8FAF82;
+--cream: #F4EFE4;
+--wheat: #E6DAC0;
+--clay: #A87D52;
+--deep: #111A0A;
+--text: #22281A;
+--muted: #626B50;
+--gold: #C4A96A;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background: var(--cream);
+color: var(--text);
+overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.4rem 5rem;
+background: rgba(244,239,228,0.93);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid rgba(61,90,52,0.12);
+transition: box-shadow 0.3s;
+}
+
+.logo-wrap { display: flex; flex-direction: column; line-height: 1.2; }
+
+.logo-ja {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.05rem;
+font-weight: 400;
+color: var(--earth);
+letter-spacing: 3px;
+}
+
+.logo-en {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.72rem;
+font-weight: 300;
+color: var(--sage);
+letter-spacing: 4px;
+}
+
+.nav-links { display: flex; gap: 2.8rem; list-style: none; }
+
+.nav-links a {
+text-decoration: none;
+font-size: 0.72rem;
+letter-spacing: 2px;
+color: var(--muted);
+transition: color 0.3s;
+font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--earth); }
+
+/* HERO */
+.hero {
+height: 100vh;
+position: relative;
+display: flex;
+align-items: center;
+overflow: hidden;
+background: var(--deep);
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 65% 40%, rgba(61,90,52,0.4) 0%, transparent 55%),
+radial-gradient(ellipse at 15% 85%, rgba(30,43,18,0.7) 0%, transparent 45%),
+linear-gradient(150deg, #0D1508 0%, #1A2610 60%, #111A0A 100%);
+}
+
+.hero-orb {
+position: absolute;
+border-radius: 50%;
+animation: orbFloat 10s ease-in-out infinite;
+pointer-events: none;
+}
+
+.hero-orb:nth-child(2) {
+width: 700px; height: 700px;
+background: radial-gradient(circle, rgba(107,143,94,0.14) 0%, transparent 70%);
+top: -150px; right: -150px;
+animation-delay: 0s;
+}
+
+.hero-orb:nth-child(3) {
+width: 350px; height: 350px;
+background: radial-gradient(circle, rgba(196,169,106,0.07) 0%, transparent 70%);
+bottom: 5%; left: 5%;
+animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+0%, 100% { transform: translateY(0) scale(1); }
+50% { transform: translateY(-25px) scale(1.04); }
+}
+
+.hero-line {
+position: absolute;
+left: 50%;
+top: 8%;
+width: 1px;
+height: 84%;
+background: linear-gradient(to bottom, transparent, rgba(107,143,94,0.12), transparent);
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+padding: 0 5rem;
+max-width: 780px;
+}
+
+.hero-eyebrow {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.85rem;
+letter-spacing: 5px;
+color: var(--gold);
+margin-bottom: 2rem;
+font-weight: 300;
+animation: fadeUp 1.4s ease both;
+}
+
+.hero-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+font-weight: 200;
+line-height: 1.25;
+color: var(--cream);
+margin-bottom: 2rem;
+animation: fadeUp 1.4s ease 0.25s both;
+}
+
+.hero-title strong {
+font-weight: 600;
+color: var(--sage-light);
+display: block;
+}
+
+.hero-sub {
+font-size: 0.92rem;
+line-height: 2.1;
+color: rgba(244,239,228,0.55);
+margin-bottom: 3.5rem;
+max-width: 480px;
+font-weight: 300;
+animation: fadeUp 1.4s ease 0.5s both;
+}
+
+.hero-cta {
+display: inline-flex;
+gap: 1.2rem;
+animation: fadeUp 1.4s ease 0.75s both;
+}
+
+.btn-p {
+padding: 0.85rem 2.4rem;
+background: var(--sage);
+color: var(--cream);
+border: none;
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 0.72rem;
+letter-spacing: 2px;
+cursor: pointer;
+text-decoration: none;
+transition: background 0.3s, transform 0.2s;
+border-radius: 1px;
+}
+
+.btn-p:hover { background: var(--moss); transform: translateY(-2px); }
+
+.btn-o {
+padding: 0.85rem 2.4rem;
+background: transparent;
+color: rgba(244,239,228,0.7);
+border: 1px solid rgba(244,239,228,0.25);
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 0.72rem;
+letter-spacing: 2px;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.3s;
+border-radius: 1px;
+}
+
+.btn-o:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.scroll-hint {
+position: absolute;
+bottom: 2.5rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.6rem;
+animation: fadeUp 1.4s ease 1.2s both;
+}
+
+.scroll-hint span {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.68rem;
+letter-spacing: 4px;
+color: rgba(244,239,228,0.3);
+}
+
+.scroll-tick {
+width: 1px;
+height: 44px;
+background: linear-gradient(to bottom, var(--gold), transparent);
+animation: tickPulse 2.2s ease infinite;
+}
+
+@keyframes tickPulse {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 0.9; }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(32px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION COMMONS */
+section { padding: 9rem 5rem; }
+
+.s-label {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.78rem;
+letter-spacing: 5px;
+color: var(--sage);
+margin-bottom: 1rem;
+font-weight: 300;
+}
+
+.s-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.9rem, 3vw, 2.8rem);
+font-weight: 200;
+line-height: 1.35;
+color: var(--earth);
+margin-bottom: 1.5rem;
+}
+
+.s-body {
+font-size: 0.9rem;
+line-height: 2.1;
+color: var(--muted);
+max-width: 520px;
+font-weight: 300;
+}
+
+.accent-rule {
+width: 36px;
+height: 1px;
+background: var(--gold);
+margin-bottom: 1.8rem;
+}
+
+/* FOUNDER */
+.founder {
+background: var(--earth);
+position: relative;
+overflow: hidden;
+padding: 10rem 5rem;
+}
+
+.founder-watermark {
+position: absolute;
+font-family: 'Cormorant Garamond', serif;
+font-size: 26rem;
+font-weight: 300;
+color: rgba(255,255,255,0.025);
+bottom: -3rem;
+right: -1rem;
+line-height: 1;
+user-select: none;
+letter-spacing: -8px;
+font-style: italic;
+}
+
+.founder-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 7rem;
+align-items: center;
+position: relative;
+z-index: 1;
+}
+
+.founder-visual {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.founder-ring {
+width: 340px;
+height: 340px;
+border-radius: 50%;
+border: 1px solid rgba(196,169,106,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+animation: ringRotate 22s linear infinite;
+}
+
+@keyframes ringRotate {
+from { transform: rotate(0deg); }
+to   { transform: rotate(360deg); }
+}
+
+.founder-ring::before {
+content: '';
+position: absolute;
+width: 7px; height: 7px;
+background: var(--gold);
+border-radius: 50%;
+top: -3.5px; left: 50%;
+transform: translateX(-50%);
+}
+
+.founder-inner {
+width: 270px;
+height: 270px;
+border-radius: 50%;
+background: radial-gradient(circle at 40% 35%, rgba(107,143,94,0.22), rgba(17,26,10,0.9));
+border: 1px solid rgba(107,143,94,0.14);
+display: flex;
+align-items: center;
+justify-content: center;
+animation: ringRotate 22s linear infinite reverse;
+}
+
+.founder-initial {
+font-family: 'Cormorant Garamond', serif;
+font-size: 5.5rem;
+font-weight: 300;
+font-style: italic;
+color: var(--gold);
+opacity: 0.65;
+}
+
+.founder-text .s-label { color: var(--gold); }
+
+.founder-text .s-title {
+color: var(--cream);
+font-weight: 200;
+}
+
+.founder-text .s-title em {
+font-style: italic;
+color: var(--sage-light);
+}
+
+.founder-text .s-body {
+color: rgba(244,239,228,0.58);
+max-width: 460px;
+}
+
+.founder-name {
+margin-top: 3rem;
+padding-top: 2rem;
+border-top: 1px solid rgba(196,169,106,0.18);
+display: flex;
+align-items: baseline;
+gap: 1.2rem;
+}
+
+.founder-name-text {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.4rem;
+font-weight: 300;
+font-style: italic;
+color: var(--gold);
+letter-spacing: 2px;
+}
+
+.founder-name-role {
+font-size: 0.68rem;
+letter-spacing: 3px;
+color: rgba(244,239,228,0.32);
+text-transform: uppercase;
+}
+
+/* PHILOSOPHY */
+.philosophy {
+background: var(--wheat);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 7rem;
+align-items: center;
+}
+
+.phil-circles {
+position: relative;
+height: 450px;
+}
+
+.pc {
+position: absolute;
+border-radius: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: transform 0.6s ease;
+cursor: default;
+}
+
+.pc:hover { transform: scale(1.04); }
+.pc-1 { width: 310px; height: 310px; background: var(--moss); top: 0; left: 0; }
+.pc-2 { width: 190px; height: 190px; background: var(--clay); bottom: 0; right: 0; }
+.pc-3 { width: 125px; height: 125px; background: var(--sage); bottom: 45px; left: 8px; }
+
+.pc-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2rem;
+color: rgba(244,239,228,0.22);
+font-weight: 300;
+}
+
+.pc-label {
+font-size: 0.62rem;
+letter-spacing: 2px;
+color: rgba(244,239,228,0.82);
+text-align: center;
+padding: 0 1rem;
+font-weight: 500;
+}
+
+/* MANIFESTO */
+.manifesto {
+background: var(--moss);
+text-align: center;
+padding: 9rem 10rem;
+position: relative;
+overflow: hidden;
+}
+
+.manifesto-deco {
+position: absolute;
+font-family: 'Cormorant Garamond', serif;
+font-size: 28rem;
+color: rgba(255,255,255,0.03);
+top: -4rem;
+left: -1rem;
+line-height: 1;
+font-style: italic;
+user-select: none;
+}
+
+.manifesto-quote {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+font-weight: 200;
+line-height: 1.85;
+color: var(--cream);
+max-width: 800px;
+margin: 0 auto 3rem;
+position: relative;
+z-index: 1;
+}
+
+.manifesto-quote em {
+font-style: italic;
+color: var(--gold);
+font-weight: 300;
+}
+
+.manifesto-sig {
+display: inline-flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+position: relative;
+z-index: 1;
+}
+
+.manifesto-sig-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.5rem;
+font-style: italic;
+color: var(--gold);
+letter-spacing: 2px;
+}
+
+.manifesto-sig-role {
+font-size: 0.62rem;
+letter-spacing: 3px;
+color: rgba(244,239,228,0.38);
+text-transform: uppercase;
+}
+
+/* VALUES */
+.values { background: var(--cream); }
+
+.values-header {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+margin-bottom: 5rem;
+align-items: end;
+}
+
+.values-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 2px;
+}
+
+.v-card {
+background: var(--wheat);
+padding: 2.8rem 2.2rem;
+position: relative;
+overflow: hidden;
+transition: background 0.4s;
+cursor: default;
+}
+
+.v-card::after {
+content: '';
+position: absolute;
+bottom: 0; left: 0;
+width: 100%; height: 2px;
+background: var(--gold);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.4s;
+}
+
+.v-card:hover::after { transform: scaleX(1); }
+.v-card:hover { background: #ddd8c2; }
+
+.v-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 3rem;
+color: rgba(61,90,52,0.09);
+position: absolute;
+top: 0.8rem; right: 1.2rem;
+line-height: 1;
+font-weight: 300;
+}
+
+.v-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
+
+.v-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1rem;
+font-weight: 400;
+color: var(--earth);
+}
+
+/* INITIATIVES */
+.initiatives { background: var(--cream); padding-top: 2rem; }
+
+.init-list { margin-top: 4rem; }
+
+.init-row {
+display: grid;
+grid-template-columns: 100px 1fr;
+align-items: center;
+gap: 3rem;
+padding: 2.2rem 0;
+border-bottom: 1px solid rgba(61,90,52,0.11);
+}
+
+.init-row:first-child { border-top: 1px solid rgba(61,90,52,0.11); }
+
+.init-tag {
+font-size: 0.62rem;
+letter-spacing: 2px;
+color: var(--sage);
+font-weight: 500;
+}
+
+.init-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 300;
+color: var(--earth);
+margin-bottom: 0.3rem;
+}
+
+.init-sub {
+font-size: 0.78rem;
+color: var(--muted);
+font-weight: 300;
+font-style: italic;
+}
+
+.init-arrow { display: none; }
+
+/* FOOTER */
+footer {
+background: var(--deep);
+padding: 5rem 5rem 3rem;
+}
+
+.footer-top {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 4rem;
+padding-bottom: 3rem;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+margin-bottom: 2.5rem;
+}
+
+.footer-brand-ja {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 400;
+color: var(--cream);
+letter-spacing: 3px;
+margin-bottom: 0.3rem;
+}
+
+.footer-brand-en {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.75rem;
+letter-spacing: 4px;
+color: var(--sage-light);
+margin-bottom: 1.2rem;
+font-weight: 300;
+}
+
+.footer-tagline {
+font-size: 0.8rem;
+line-height: 1.9;
+color: rgba(244,239,228,0.32);
+font-weight: 300;
+max-width: 260px;
+}
+
+.footer-col-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.7rem;
+letter-spacing: 3px;
+color: var(--gold);
+margin-bottom: 1.4rem;
+font-weight: 300;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+
+.footer-links a {
+text-decoration: none;
+font-size: 0.78rem;
+color: rgba(244,239,228,0.35);
+transition: color 0.3s;
+font-weight: 300;
+}
+
+.footer-links a:hover { color: var(--cream); }
+
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.footer-copy {
+font-size: 0.68rem;
+color: rgba(244,239,228,0.18);
+letter-spacing: 1px;
+}
+
+.footer-founder-credit {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.8rem;
+font-style: italic;
+color: rgba(196,169,106,0.38);
+letter-spacing: 1px;
+}
+
+/* REVEAL */
+.reveal {
+opacity: 0;
+transform: translateY(26px);
+transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1 { transition-delay: 0.12s; }
+.rd2 { transition-delay: 0.24s; }
+.rd3 { transition-delay: 0.36s; }
+.rd4 { transition-delay: 0.48s; }
+.rd5 { transition-delay: 0.60s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="top-nav">
+<div class="logo-wrap">
+<div class="logo-ja">tattun農業</div>
+<div class="logo-en">tattun agriculture</div>
+</div>
+<ul class="nav-links">
+<li><a href="#founder">創業者</a></li>
+<li><a href="#philosophy">理念</a></li>
+<li><a href="#initiatives">取り組み</a></li>
+<li><a href="recruit/">採用情報</a></li>
+<li><a href="contact/">お問い合わせ</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-orb"></div>
+<div class="hero-orb"></div>
+<div class="hero-line"></div>
+
+<div class="hero-content">
+<p class="hero-eyebrow">tattun agriculture — founded by tattun</p>
+<h1 class="hero-title">
+ひとりの問いが、<br>
+<strong>農業の未来を</strong><br>
+変えはじめた
+</h1>
+<p class="hero-sub">
+環境と人間の尊厳を等しく重んじる——<br>
+tattunが抱いたその信念が、今日の私たちの礎となっています。
+</p>
+<div class="hero-cta">
+<a href="about/tattun.html" class="btn-p">tattunについて</a>
+<a href="#initiatives" class="btn-o">私たちの取り組み</a>
+</div>
+</div>
+
+<div class="scroll-hint">
+<div class="scroll-tick"></div>
+<span>scroll</span>
+</div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+<div class="founder-watermark">tattun</div>
+<div class="founder-grid">
+
+```
+<div class="founder-visual reveal">
+  <div class="founder-ring">
+    <div class="founder-inner">
+      <span class="founder-initial">t</span>
+    </div>
+  </div>
+</div>
+
+<div class="founder-text">
+  <p class="s-label reveal">founder &amp; visionary</p>
+  <div class="accent-rule reveal rd1"></div>
+  <h2 class="s-title reveal rd1">
+    土への敬意から、<br>
+    すべての思想が<br>
+    <em>生まれた</em>
+  </h2>
+  <p class="s-body reveal rd2">
+    tattunは、農業とは生産の技術ではなく、人間と自然の間に交わされる誠実な約束であると説いた。
+    その信念は、tattun農業の6つの価値観として、今も私たちの実践を導き続けている。
+  </p>
+  <div class="founder-name reveal rd3">
+    <span class="founder-name-text">tattun</span>
+    <span class="founder-name-role">Founder / CEO</span>
+  </div>
+</div>
+```
+
+</div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+<div class="phil-circles reveal">
+<div class="pc pc-1">
+<div class="pc-num">01</div>
+<div class="pc-label">環境との共生</div>
+</div>
+<div class="pc pc-2">
+<div class="pc-num">02</div>
+<div class="pc-label">人の尊厳</div>
+</div>
+<div class="pc pc-3">
+<div class="pc-num">03</div>
+<div class="pc-label">地域の未来</div>
+</div>
+</div>
+
+<div>
+<p class="s-label reveal">our philosophy</p>
+<div class="accent-rule reveal rd1"></div>
+<h2 class="s-title reveal rd1">
+農業は、生命と<br>生命を結ぶ<br>対話である
+</h2>
+<p class="s-body reveal rd2">
+私たちは完全無農薬栽培にコミットしています。
+化学物質に頼らない農業が環境と人体にもたらす恩恵を信じ、
+その実践を通じて大地との誠実な対話を続けています。
+</p>
+<p class="s-body reveal rd3" style="margin-top: 1.2rem;">
+一方で、無農薬栽培が抱える収量・病害リスクの課題には、
+最新の遺伝子技術で向き合うことにコミットしています。
+科学と自然の知恵を組み合わせることで、
+環境負荷をかけずに豊かな実りを届けられると考えています。
+</p>
+</div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+<div class="manifesto-deco">"</div>
+<p class="manifesto-quote reveal">
+「食べることは、<em>政治的な行為</em>であり、<br>
+生態学的な選択であり、<br>
+人への眼差しである。」
+</p>
+<div class="manifesto-sig reveal rd2">
+<span class="manifesto-sig-name">tattun</span>
+<span class="manifesto-sig-role">Founder, tattun Agriculture</span>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="values" id="values">
+<div class="values-header">
+<div>
+<p class="s-label reveal">core values</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">
+tattunが定めた、<br>5つの柱
+</h2>
+</div>
+<p class="s-body reveal rd2" style="align-self: end;">
+これは言葉ではなく、<br>毎日の農場運営に息づく行動指針です。
+</p>
+</div>
+
+<div class="values-grid">
+<div class="v-card reveal">
+<span class="v-icon">🌱</span>
+<span class="v-num">01</span>
+<h3 class="v-title">土壌の再生</h3>
+</div>
+<div class="v-card reveal rd1">
+<span class="v-icon">💧</span>
+<span class="v-num">02</span>
+<h3 class="v-title">水資源の保全</h3>
+</div>
+<div class="v-card reveal rd2">
+<span class="v-icon">👐</span>
+<span class="v-num">03</span>
+<h3 class="v-title">労働者の権利</h3>
+</div>
+<div class="v-card reveal rd1">
+<span class="v-icon">🤝</span>
+<span class="v-num">04</span>
+<h3 class="v-title">地域との共創</h3>
+</div>
+<div class="v-card reveal rd2">
+<span class="v-icon">📖</span>
+<span class="v-num">05</span>
+<h3 class="v-title">情報の透明性</h3>
+</div>
+</div>
+</section>
+
+<!-- INITIATIVES -->
+<section class="initiatives" id="initiatives">
+<p class="s-label reveal">our initiatives</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">私たちが向き合うこと</h2>
+
+<div class="init-list">
+<div class="init-row reveal">
+<span class="init-tag">栽培</span>
+<div>
+<h3 class="init-title">完全無農薬への揺るぎないコミットメント</h3>
+<p class="init-sub">化学農薬を一切使わないことが、私たちの出発点である。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd1">
+<span class="init-tag">技術</span>
+<div>
+<h3 class="init-title">遺伝子技術で、無農薬の限界に挑む</h3>
+<p class="init-sub">収量・病害への対応を、科学の力でカバーすることにコミットしている。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd2">
+<span class="init-tag">環境</span>
+<div>
+<h3 class="init-title">生物多様性の回復</h3>
+<p class="init-sub">農地が、生命の多様性を守る場所になれるか。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd1">
+<span class="init-tag">人権</span>
+<div>
+<h3 class="init-title">すべての人が尊重される労働</h3>
+<p class="init-sub">誰もが安心して働ける場所が、農業の土台である。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd2">
+<span class="init-tag">教育</span>
+<div>
+<h3 class="init-title">食と土への理解を次世代へ</h3>
+<p class="init-sub">知ることが、変えることの始まりだと信じている。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd4">
+<span class="init-tag">地域</span>
+<div>
+<h3 class="init-title">食のつながりを地域に取り戻す</h3>
+<p class="init-sub">生産者と消費者の距離が縮まるほど、食は豊かになる。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+</div>
+</section>
+
+<!-- RECRUIT -->
+<section style="background: var(--wheat); padding: 9rem 5rem;" id="recruit">
+<p class="s-label reveal">recruit</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">tattunとともに、<br>農業の未来を<br>つくる仲間へ</h2>
+<p class="s-body reveal rd2" style="margin-top: 0.5rem;">
+土と人を等しく大切にできる方を、私たちは求めています。<br>
+詳細はお問い合わせよりご連絡ください。
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+<div class="footer-top">
+<div>
+<div class="footer-brand-ja">tattun農業</div>
+<div class="footer-brand-en">tattun agriculture</div>
+<p class="footer-tagline">
+環境と人をともに大切にする農業の実践者として、持続可能な食のシステムをつくり続けます。
+</p>
+</div>
+<div>
+<ul class="footer-links">
+<li><a href="about/tattun.html">tattunについて</a></li>
+<li><a href="about/story.html">創業の想い</a></li>
+<li><a href="farm/">農場案内</a></li>
+<li><a href="recruit/">採用情報</a></li>
+<li><a href="contact/">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2024 tattun農業 / tattun Agriculture. All Rights Reserved.</p>
+<p class="footer-founder-credit">founded & envisioned by tattun</p>
+</div>
+</footer>
+
+<script src="js/site-common.js"></script>
+</body>
+</html>
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background: var(--cream);
+color: var(--text);
+overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.4rem 5rem;
+background: rgba(244,239,228,0.93);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid rgba(61,90,52,0.12);
+transition: box-shadow 0.3s;
+}
+
+.logo-wrap { display: flex; flex-direction: column; line-height: 1.2; }
+
+.logo-ja {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.05rem;
+font-weight: 400;
+color: var(--earth);
+letter-spacing: 3px;
+}
+
+.logo-en {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.72rem;
+font-weight: 300;
+color: var(--sage);
+letter-spacing: 4px;
+}
+
+.nav-links { display: flex; gap: 2.8rem; list-style: none; }
+
+.nav-links a {
+text-decoration: none;
+font-size: 0.72rem;
+letter-spacing: 2px;
+color: var(--muted);
+transition: color 0.3s;
+font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--earth); }
+
+/* HERO */
+.hero {
+height: 100vh;
+position: relative;
+display: flex;
+align-items: center;
+overflow: hidden;
+background: var(--deep);
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 65% 40%, rgba(61,90,52,0.4) 0%, transparent 55%),
+radial-gradient(ellipse at 15% 85%, rgba(30,43,18,0.7) 0%, transparent 45%),
+linear-gradient(150deg, #0D1508 0%, #1A2610 60%, #111A0A 100%);
+}
+
+.hero-orb {
+position: absolute;
+border-radius: 50%;
+animation: orbFloat 10s ease-in-out infinite;
+pointer-events: none;
+}
+
+.hero-orb:nth-child(2) {
+width: 700px; height: 700px;
+background: radial-gradient(circle, rgba(107,143,94,0.14) 0%, transparent 70%);
+top: -150px; right: -150px;
+animation-delay: 0s;
+}
+
+.hero-orb:nth-child(3) {
+width: 350px; height: 350px;
+background: radial-gradient(circle, rgba(196,169,106,0.07) 0%, transparent 70%);
+bottom: 5%; left: 5%;
+animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+0%, 100% { transform: translateY(0) scale(1); }
+50% { transform: translateY(-25px) scale(1.04); }
+}
+
+.hero-line {
+position: absolute;
+left: 50%;
+top: 8%;
+width: 1px;
+height: 84%;
+background: linear-gradient(to bottom, transparent, rgba(107,143,94,0.12), transparent);
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+padding: 0 5rem;
+max-width: 780px;
+}
+
+.hero-eyebrow {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.85rem;
+letter-spacing: 5px;
+color: var(--gold);
+margin-bottom: 2rem;
+font-weight: 300;
+animation: fadeUp 1.4s ease both;
+}
+
+.hero-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+font-weight: 200;
+line-height: 1.25;
+color: var(--cream);
+margin-bottom: 2rem;
+animation: fadeUp 1.4s ease 0.25s both;
+}
+
+.hero-title strong {
+font-weight: 600;
+color: var(--sage-light);
+display: block;
+}
+
+.hero-sub {
+font-size: 0.92rem;
+line-height: 2.1;
+color: rgba(244,239,228,0.55);
+margin-bottom: 3.5rem;
+max-width: 480px;
+font-weight: 300;
+animation: fadeUp 1.4s ease 0.5s both;
+}
+
+.hero-cta {
+display: inline-flex;
+gap: 1.2rem;
+animation: fadeUp 1.4s ease 0.75s both;
+}
+
+.btn-p {
+padding: 0.85rem 2.4rem;
+background: var(--sage);
+color: var(--cream);
+border: none;
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 0.72rem;
+letter-spacing: 2px;
+cursor: pointer;
+text-decoration: none;
+transition: background 0.3s, transform 0.2s;
+border-radius: 1px;
+}
+
+.btn-p:hover { background: var(--moss); transform: translateY(-2px); }
+
+.btn-o {
+padding: 0.85rem 2.4rem;
+background: transparent;
+color: rgba(244,239,228,0.7);
+border: 1px solid rgba(244,239,228,0.25);
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 0.72rem;
+letter-spacing: 2px;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.3s;
+border-radius: 1px;
+}
+
+.btn-o:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.scroll-hint {
+position: absolute;
+bottom: 2.5rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.6rem;
+animation: fadeUp 1.4s ease 1.2s both;
+}
+
+.scroll-hint span {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.68rem;
+letter-spacing: 4px;
+color: rgba(244,239,228,0.3);
+}
+
+.scroll-tick {
+width: 1px;
+height: 44px;
+background: linear-gradient(to bottom, var(--gold), transparent);
+animation: tickPulse 2.2s ease infinite;
+}
+
+@keyframes tickPulse {
+0%, 100% { opacity: 0.3; }
+50% { opacity: 0.9; }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(32px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION COMMONS */
+section { padding: 9rem 5rem; }
+
+.s-label {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.78rem;
+letter-spacing: 5px;
+color: var(--sage);
+margin-bottom: 1rem;
+font-weight: 300;
+}
+
+.s-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.9rem, 3vw, 2.8rem);
+font-weight: 200;
+line-height: 1.35;
+color: var(--earth);
+margin-bottom: 1.5rem;
+}
+
+.s-body {
+font-size: 0.9rem;
+line-height: 2.1;
+color: var(--muted);
+max-width: 520px;
+font-weight: 300;
+}
+
+.accent-rule {
+width: 36px;
+height: 1px;
+background: var(--gold);
+margin-bottom: 1.8rem;
+}
+
+/* FOUNDER */
+.founder {
+background: var(--earth);
+position: relative;
+overflow: hidden;
+padding: 10rem 5rem;
+}
+
+.founder-watermark {
+position: absolute;
+font-family: 'Cormorant Garamond', serif;
+font-size: 26rem;
+font-weight: 300;
+color: rgba(255,255,255,0.025);
+bottom: -3rem;
+right: -1rem;
+line-height: 1;
+user-select: none;
+letter-spacing: -8px;
+font-style: italic;
+}
+
+.founder-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 7rem;
+align-items: center;
+position: relative;
+z-index: 1;
+}
+
+.founder-visual {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.founder-ring {
+width: 340px;
+height: 340px;
+border-radius: 50%;
+border: 1px solid rgba(196,169,106,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+animation: ringRotate 22s linear infinite;
+}
+
+@keyframes ringRotate {
+from { transform: rotate(0deg); }
+to   { transform: rotate(360deg); }
+}
+
+.founder-ring::before {
+content: '';
+position: absolute;
+width: 7px; height: 7px;
+background: var(--gold);
+border-radius: 50%;
+top: -3.5px; left: 50%;
+transform: translateX(-50%);
+}
+
+.founder-inner {
+width: 270px;
+height: 270px;
+border-radius: 50%;
+background: radial-gradient(circle at 40% 35%, rgba(107,143,94,0.22), rgba(17,26,10,0.9));
+border: 1px solid rgba(107,143,94,0.14);
+display: flex;
+align-items: center;
+justify-content: center;
+animation: ringRotate 22s linear infinite reverse;
+}
+
+.founder-initial {
+font-family: 'Cormorant Garamond', serif;
+font-size: 5.5rem;
+font-weight: 300;
+font-style: italic;
+color: var(--gold);
+opacity: 0.65;
+}
+
+.founder-text .s-label { color: var(--gold); }
+
+.founder-text .s-title {
+color: var(--cream);
+font-weight: 200;
+}
+
+.founder-text .s-title em {
+font-style: italic;
+color: var(--sage-light);
+}
+
+.founder-text .s-body {
+color: rgba(244,239,228,0.58);
+max-width: 460px;
+}
+
+.founder-name {
+margin-top: 3rem;
+padding-top: 2rem;
+border-top: 1px solid rgba(196,169,106,0.18);
+display: flex;
+align-items: baseline;
+gap: 1.2rem;
+}
+
+.founder-name-text {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.4rem;
+font-weight: 300;
+font-style: italic;
+color: var(--gold);
+letter-spacing: 2px;
+}
+
+.founder-name-role {
+font-size: 0.68rem;
+letter-spacing: 3px;
+color: rgba(244,239,228,0.32);
+text-transform: uppercase;
+}
+
+/* PHILOSOPHY */
+.philosophy {
+background: var(--wheat);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 7rem;
+align-items: center;
+}
+
+.phil-circles {
+position: relative;
+height: 450px;
+}
+
+.pc {
+position: absolute;
+border-radius: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: transform 0.6s ease;
+cursor: default;
+}
+
+.pc:hover { transform: scale(1.04); }
+.pc-1 { width: 310px; height: 310px; background: var(--moss); top: 0; left: 0; }
+.pc-2 { width: 190px; height: 190px; background: var(--clay); bottom: 0; right: 0; }
+.pc-3 { width: 125px; height: 125px; background: var(--sage); bottom: 45px; left: 8px; }
+
+.pc-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2rem;
+color: rgba(244,239,228,0.22);
+font-weight: 300;
+}
+
+.pc-label {
+font-size: 0.62rem;
+letter-spacing: 2px;
+color: rgba(244,239,228,0.82);
+text-align: center;
+padding: 0 1rem;
+font-weight: 500;
+}
+
+/* MANIFESTO */
+.manifesto {
+background: var(--moss);
+text-align: center;
+padding: 9rem 10rem;
+position: relative;
+overflow: hidden;
+}
+
+.manifesto-deco {
+position: absolute;
+font-family: 'Cormorant Garamond', serif;
+font-size: 28rem;
+color: rgba(255,255,255,0.03);
+top: -4rem;
+left: -1rem;
+line-height: 1;
+font-style: italic;
+user-select: none;
+}
+
+.manifesto-quote {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+font-weight: 200;
+line-height: 1.85;
+color: var(--cream);
+max-width: 800px;
+margin: 0 auto 3rem;
+position: relative;
+z-index: 1;
+}
+
+.manifesto-quote em {
+font-style: italic;
+color: var(--gold);
+font-weight: 300;
+}
+
+.manifesto-sig {
+display: inline-flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+position: relative;
+z-index: 1;
+}
+
+.manifesto-sig-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.5rem;
+font-style: italic;
+color: var(--gold);
+letter-spacing: 2px;
+}
+
+.manifesto-sig-role {
+font-size: 0.62rem;
+letter-spacing: 3px;
+color: rgba(244,239,228,0.38);
+text-transform: uppercase;
+}
+
+/* VALUES */
+.values { background: var(--cream); }
+
+.values-header {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+margin-bottom: 5rem;
+align-items: end;
+}
+
+.values-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 2px;
+}
+
+.v-card {
+background: var(--wheat);
+padding: 2.8rem 2.2rem;
+position: relative;
+overflow: hidden;
+transition: background 0.4s;
+cursor: default;
+}
+
+.v-card::after {
+content: '';
+position: absolute;
+bottom: 0; left: 0;
+width: 100%; height: 2px;
+background: var(--gold);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.4s;
+}
+
+.v-card:hover::after { transform: scaleX(1); }
+.v-card:hover { background: #ddd8c2; }
+
+.v-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 3rem;
+color: rgba(61,90,52,0.09);
+position: absolute;
+top: 0.8rem; right: 1.2rem;
+line-height: 1;
+font-weight: 300;
+}
+
+.v-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
+
+.v-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1rem;
+font-weight: 400;
+color: var(--earth);
+}
+
+/* INITIATIVES */
+.initiatives { background: var(--cream); padding-top: 2rem; }
+
+.init-list { margin-top: 4rem; }
+
+.init-row {
+display: grid;
+grid-template-columns: 100px 1fr;
+align-items: center;
+gap: 3rem;
+padding: 2.2rem 0;
+border-bottom: 1px solid rgba(61,90,52,0.11);
+}
+
+.init-row:first-child { border-top: 1px solid rgba(61,90,52,0.11); }
+
+.init-tag {
+font-size: 0.62rem;
+letter-spacing: 2px;
+color: var(--sage);
+font-weight: 500;
+}
+
+.init-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 300;
+color: var(--earth);
+margin-bottom: 0.3rem;
+}
+
+.init-sub {
+font-size: 0.78rem;
+color: var(--muted);
+font-weight: 300;
+font-style: italic;
+}
+
+.init-arrow { display: none; }
+
+/* FOOTER */
+footer {
+background: var(--deep);
+padding: 5rem 5rem 3rem;
+}
+
+.footer-top {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 4rem;
+padding-bottom: 3rem;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+margin-bottom: 2.5rem;
+}
+
+.footer-brand-ja {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 400;
+color: var(--cream);
+letter-spacing: 3px;
+margin-bottom: 0.3rem;
+}
+
+.footer-brand-en {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.75rem;
+letter-spacing: 4px;
+color: var(--sage-light);
+margin-bottom: 1.2rem;
+font-weight: 300;
+}
+
+.footer-tagline {
+font-size: 0.8rem;
+line-height: 1.9;
+color: rgba(244,239,228,0.32);
+font-weight: 300;
+max-width: 260px;
+}
+
+.footer-col-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.7rem;
+letter-spacing: 3px;
+color: var(--gold);
+margin-bottom: 1.4rem;
+font-weight: 300;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+
+.footer-links a {
+text-decoration: none;
+font-size: 0.78rem;
+color: rgba(244,239,228,0.35);
+transition: color 0.3s;
+font-weight: 300;
+}
+
+.footer-links a:hover { color: var(--cream); }
+
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.footer-copy {
+font-size: 0.68rem;
+color: rgba(244,239,228,0.18);
+letter-spacing: 1px;
+}
+
+.footer-founder-credit {
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.8rem;
+font-style: italic;
+color: rgba(196,169,106,0.38);
+letter-spacing: 1px;
+}
+
+/* REVEAL */
+.reveal {
+opacity: 0;
+transform: translateY(26px);
+transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.rd1 { transition-delay: 0.12s; }
+.rd2 { transition-delay: 0.24s; }
+.rd3 { transition-delay: 0.36s; }
+.rd4 { transition-delay: 0.48s; }
+.rd5 { transition-delay: 0.60s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="top-nav">
+<div class="logo-wrap">
+<div class="logo-ja">tattun農業</div>
+<div class="logo-en">tattun agriculture</div>
+</div>
+<ul class="nav-links">
+<li><a href="#founder">創業者</a></li>
+<li><a href="#philosophy">理念</a></li>
+<li><a href="#initiatives">取り組み</a></li>
+<li><a href="recruit/">採用情報</a></li>
+<li><a href="contact/">お問い合わせ</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-orb"></div>
+<div class="hero-orb"></div>
+<div class="hero-line"></div>
+
+<div class="hero-content">
+<p class="hero-eyebrow">tattun agriculture — founded by tattun</p>
+<h1 class="hero-title">
+ひとりの問いが、<br>
+<strong>農業の未来を</strong><br>
+変えはじめた
+</h1>
+<p class="hero-sub">
+環境と人間の尊厳を等しく重んじる——<br>
+tattunが抱いたその信念が、今日の私たちの礎となっています。
+</p>
+<div class="hero-cta">
+<a href="about/tattun.html" class="btn-p">tattunについて</a>
+<a href="#initiatives" class="btn-o">私たちの取り組み</a>
+</div>
+</div>
+
+<div class="scroll-hint">
+<div class="scroll-tick"></div>
+<span>scroll</span>
+</div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+<div class="founder-watermark">tattun</div>
+<div class="founder-grid">
+
+```
+<div class="founder-visual reveal">
+  <div class="founder-ring">
+    <div class="founder-inner">
+      <span class="founder-initial">t</span>
+    </div>
+  </div>
+</div>
+
+<div class="founder-text">
+  <p class="s-label reveal">founder &amp; visionary</p>
+  <div class="accent-rule reveal rd1"></div>
+  <h2 class="s-title reveal rd1">
+    土への敬意から、<br>
+    すべての思想が<br>
+    <em>生まれた</em>
+  </h2>
+  <p class="s-body reveal rd2">
+    tattunは、農業とは生産の技術ではなく、人間と自然の間に交わされる誠実な約束であると説いた。
+    その信念は、tattun農業の6つの価値観として、今も私たちの実践を導き続けている。
+  </p>
+  <div class="founder-name reveal rd3">
+    <span class="founder-name-text">tattun</span>
+    <span class="founder-name-role">Founder / CEO</span>
+  </div>
+</div>
+```
+
+</div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+<div class="phil-circles reveal">
+<div class="pc pc-1">
+<div class="pc-num">01</div>
+<div class="pc-label">環境との共生</div>
+</div>
+<div class="pc pc-2">
+<div class="pc-num">02</div>
+<div class="pc-label">人の尊厳</div>
+</div>
+<div class="pc pc-3">
+<div class="pc-num">03</div>
+<div class="pc-label">地域の未来</div>
+</div>
+</div>
+
+<div>
+<p class="s-label reveal">our philosophy</p>
+<div class="accent-rule reveal rd1"></div>
+<h2 class="s-title reveal rd1">
+農業は、生命と<br>生命を結ぶ<br>対話である
+</h2>
+<p class="s-body reveal rd2">
+私たちは完全無農薬栽培にコミットしています。
+化学物質に頼らない農業が環境と人体にもたらす恩恵を信じ、
+その実践を通じて大地との誠実な対話を続けています。
+</p>
+<p class="s-body reveal rd3" style="margin-top: 1.2rem;">
+一方で、無農薬栽培が抱える収量・病害リスクの課題には、
+最新の遺伝子技術で向き合うことにコミットしています。
+科学と自然の知恵を組み合わせることで、
+環境負荷をかけずに豊かな実りを届けられると考えています。
+</p>
+</div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+<div class="manifesto-deco">"</div>
+<p class="manifesto-quote reveal">
+「食べることは、<em>政治的な行為</em>であり、<br>
+生態学的な選択であり、<br>
+人への眼差しである。」
+</p>
+<div class="manifesto-sig reveal rd2">
+<span class="manifesto-sig-name">tattun</span>
+<span class="manifesto-sig-role">Founder, tattun Agriculture</span>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="values" id="values">
+<div class="values-header">
+<div>
+<p class="s-label reveal">core values</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">
+tattunが定めた、<br>5つの柱
+</h2>
+</div>
+<p class="s-body reveal rd2" style="align-self: end;">
+これは言葉ではなく、<br>毎日の農場運営に息づく行動指針です。
+</p>
+</div>
+
+<div class="values-grid">
+<div class="v-card reveal">
+<span class="v-icon">🌱</span>
+<span class="v-num">01</span>
+<h3 class="v-title">土壌の再生</h3>
+</div>
+<div class="v-card reveal rd1">
+<span class="v-icon">💧</span>
+<span class="v-num">02</span>
+<h3 class="v-title">水資源の保全</h3>
+</div>
+<div class="v-card reveal rd2">
+<span class="v-icon">👐</span>
+<span class="v-num">03</span>
+<h3 class="v-title">労働者の権利</h3>
+</div>
+<div class="v-card reveal rd1">
+<span class="v-icon">🤝</span>
+<span class="v-num">04</span>
+<h3 class="v-title">地域との共創</h3>
+</div>
+<div class="v-card reveal rd2">
+<span class="v-icon">📖</span>
+<span class="v-num">05</span>
+<h3 class="v-title">情報の透明性</h3>
+</div>
+</div>
+</section>
+
+<!-- INITIATIVES -->
+<section class="initiatives" id="initiatives">
+<p class="s-label reveal">our initiatives</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">私たちが向き合うこと</h2>
+
+<div class="init-list">
+<div class="init-row reveal">
+<span class="init-tag">栽培</span>
+<div>
+<h3 class="init-title">完全無農薬への揺るぎないコミットメント</h3>
+<p class="init-sub">化学農薬を一切使わないことが、私たちの出発点である。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd1">
+<span class="init-tag">技術</span>
+<div>
+<h3 class="init-title">遺伝子技術で、無農薬の限界に挑む</h3>
+<p class="init-sub">収量・病害への対応を、科学の力でカバーすることにコミットしている。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd2">
+<span class="init-tag">環境</span>
+<div>
+<h3 class="init-title">生物多様性の回復</h3>
+<p class="init-sub">農地が、生命の多様性を守る場所になれるか。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd1">
+<span class="init-tag">人権</span>
+<div>
+<h3 class="init-title">すべての人が尊重される労働</h3>
+<p class="init-sub">誰もが安心して働ける場所が、農業の土台である。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd2">
+<span class="init-tag">教育</span>
+<div>
+<h3 class="init-title">食と土への理解を次世代へ</h3>
+<p class="init-sub">知ることが、変えることの始まりだと信じている。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+<div class="init-row reveal rd4">
+<span class="init-tag">地域</span>
+<div>
+<h3 class="init-title">食のつながりを地域に取り戻す</h3>
+<p class="init-sub">生産者と消費者の距離が縮まるほど、食は豊かになる。</p>
+</div>
+<span class="init-arrow">→</span>
+</div>
+</div>
+</section>
+
+<!-- RECRUIT -->
+<section style="background: var(--wheat); padding: 9rem 5rem;" id="recruit">
+<p class="s-label reveal">recruit</p>
+<div class="accent-rule reveal"></div>
+<h2 class="s-title reveal rd1">tattunとともに、<br>農業の未来を<br>つくる仲間へ</h2>
+<p class="s-body reveal rd2" style="margin-top: 0.5rem;">
+土と人を等しく大切にできる方を、私たちは求めています。<br>
+詳細はお問い合わせよりご連絡ください。
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+<div class="footer-top">
+<div>
+<div class="footer-brand-ja">tattun農業</div>
+<div class="footer-brand-en">tattun agriculture</div>
+<p class="footer-tagline">
+環境と人をともに大切にする農業の実践者として、持続可能な食のシステムをつくり続けます。
+</p>
+</div>
+<div>
+<ul class="footer-links">
+<li><a href="about/tattun.html">tattunについて</a></li>
+<li><a href="about/story.html">創業の想い</a></li>
+<li><a href="farm/">農場案内</a></li>
+<li><a href="recruit/">採用情報</a></li>
+<li><a href="contact/">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copy">© 2024 tattun農業 / tattun Agriculture. All Rights Reserved.</p>
+<p class="footer-founder-credit">founded & envisioned by tattun</p>
+</div>
+</footer>
+
+<script src="js/site-common.js"></script>
+</body>
+</html>
